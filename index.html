@@ -540,6 +540,96 @@
     text-decoration: none;
   }
 
+  /* SLIDER DINTORNI */
+  .slider-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.93);
+    z-index: 300;
+    flex-direction: column;
+  }
+  .slider-overlay.open { display: flex; }
+  .slider-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.4rem 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    flex-shrink: 0;
+  }
+  .slider-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: rgba(255,255,255,0.75);
+    letter-spacing: 0.06em;
+  }
+  .slider-counter {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.2em;
+  }
+  .slider-close {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.5);
+    font-size: 1.4rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+  }
+  .slider-close:hover { color: #fff; }
+  .slider-body {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    min-height: 0;
+  }
+  .slider-img-wrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 0;
+    max-height: 100%;
+  }
+  .slider-img-wrap img {
+    max-width: 100%;
+    max-height: calc(100vh - 200px);
+    object-fit: contain;
+    display: block;
+  }
+  .slider-btn {
+    background: none;
+    border: 1px solid rgba(255,255,255,0.18);
+    color: rgba(255,255,255,0.55);
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .slider-btn:hover { background: rgba(255,255,255,0.08); color: #fff; border-color: rgba(255,255,255,0.4); }
+  .slider-footer {
+    padding: 1.2rem 2rem 2rem;
+    text-align: center;
+    flex-shrink: 0;
+  }
+  .slider-caption {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: rgba(255,255,255,0.6);
+  }
+
   /* MODAL GUIDA */
   .modal-overlay {
     display: none;
@@ -755,21 +845,21 @@
   <div class="divider"></div>
   <p class="section-text">Conca Verde è il punto di partenza perfetto per scoprire il meglio della Sardegna settentrionale.</p>
   <div class="dintorni-grid">
-    <div class="dintorni-card">
+    <div class="dintorni-card" onclick="openSlider('spiagge')">
       <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80" alt="Spiagge">
       <div class="dintorni-overlay">
         <h3>Spiagge</h3>
         <p>Le più belle spiagge dell'isola a pochi minuti</p>
       </div>
     </div>
-    <div class="dintorni-card">
+    <div class="dintorni-card" onclick="openSlider('borghi')">
       <img src="https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?w=600&q=80" alt="Borghi e cultura">
       <div class="dintorni-overlay">
         <h3>Borghi e cultura</h3>
         <p>Paesini sardi autentici, mercati e tradizioni</p>
       </div>
     </div>
-    <div class="dintorni-card">
+    <div class="dintorni-card" onclick="openSlider('gastronomia')">
       <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80" alt="Enogastronomia">
       <div class="dintorni-overlay">
         <h3>Gastronomia</h3>
@@ -864,6 +954,25 @@
     <div class="modal-icon" id="modal-icon"></div>
     <h2 id="modal-title"></h2>
     <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<!-- SLIDER DINTORNI -->
+<div class="slider-overlay" id="slider-overlay" onclick="if(event.target===this)closeSlider()">
+  <div class="slider-header">
+    <span class="slider-title" id="slider-title"></span>
+    <span class="slider-counter" id="slider-counter"></span>
+    <button class="slider-close" onclick="closeSlider()">✕</button>
+  </div>
+  <div class="slider-body">
+    <button class="slider-btn" onclick="sliderPrev()">&#8592;</button>
+    <div class="slider-img-wrap">
+      <img id="slider-img" src="" alt="">
+    </div>
+    <button class="slider-btn" onclick="sliderNext()">&#8594;</button>
+  </div>
+  <div class="slider-footer">
+    <p class="slider-caption" id="slider-caption"></p>
   </div>
 </div>
 
@@ -986,6 +1095,68 @@ const guide = {
   }
 };
 
+const sliderData = {
+  spiagge: {
+    title: 'Spiagge',
+    slides: [
+      { src: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1400&q=85', caption: 'Rena Bianca — sabbia finissima e acque cristalline, a soli 10 minuti dalla villa' },
+      { src: 'https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1400&q=85', caption: 'Capo Testa — un paesaggio lunare tra rocce granitiche e mare turchese' },
+      { src: 'https://images.unsplash.com/photo-1563911302283-d2bc129e7570?w=1400&q=85', caption: 'La Marmorata — una delle spiagge più selvagge e incontaminate della zona' },
+    ]
+  },
+  borghi: {
+    title: 'Borghi e cultura',
+    slides: [
+      { src: 'https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?w=1400&q=85', caption: 'Santa Teresa di Gallura — il borgo più vicino, con il caratteristico centro storico affacciato sullo Stretto di Bonifacio' },
+      { src: 'https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=1400&q=85', caption: 'La Maddalena — l\'isola principale dell\'arcipelago, raggiungibile in traghetto da Palau in 15 minuti' },
+      { src: 'https://images.unsplash.com/photo-1555992336-03a23c7b20ee?w=1400&q=85', caption: 'Aggius — piccolo paese nell\'entroterra gallurese, famoso per i tappeti sardi e il Museo Etnografico' },
+    ]
+  },
+  gastronomia: {
+    title: 'Gastronomia',
+    slides: [
+      { src: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1400&q=85', caption: 'I ristoranti di Santa Teresa — pesce freschissimo, aragosta gallurese e antipasti di mare' },
+      { src: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1400&q=85', caption: 'Culurgiones e pasta fresca — i primi piatti della tradizione gallurese, da provare nei ristoranti tipici' },
+      { src: 'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=1400&q=85', caption: 'Cannonau e Vermentino — i vini sardi da abbinare ai prodotti locali: formaggi, salumi e miele di corbezzolo' },
+    ]
+  }
+};
+
+let currentSlider = null;
+let currentIndex = 0;
+
+function openSlider(key) {
+  currentSlider = sliderData[key];
+  currentIndex = 0;
+  updateSlider();
+  document.getElementById('slider-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeSlider() {
+  document.getElementById('slider-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function updateSlider() {
+  const slide = currentSlider.slides[currentIndex];
+  document.getElementById('slider-img').src = slide.src;
+  document.getElementById('slider-img').alt = slide.caption;
+  document.getElementById('slider-caption').textContent = slide.caption;
+  document.getElementById('slider-title').textContent = currentSlider.title;
+  document.getElementById('slider-counter').textContent = `${currentIndex + 1} / ${currentSlider.slides.length}`;
+}
+
+function sliderPrev() {
+  currentIndex = (currentIndex - 1 + currentSlider.slides.length) % currentSlider.slides.length;
+  updateSlider();
+}
+
+function sliderNext() {
+  currentIndex = (currentIndex + 1) % currentSlider.slides.length;
+  updateSlider();
+}
+
 function openModal(key) {
   const g = guide[key];
   document.getElementById('modal-icon').textContent = g.icon;
@@ -1000,7 +1171,13 @@ function closeModal() {
   document.body.style.overflow = '';
 }
 
-document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { closeModal(); closeSlider(); }
+  if (document.getElementById('slider-overlay').classList.contains('open')) {
+    if (e.key === 'ArrowLeft') sliderPrev();
+    if (e.key === 'ArrowRight') sliderNext();
+  }
+});
 </script>
 </body>
 </html>
