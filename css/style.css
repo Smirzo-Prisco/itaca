@@ -651,16 +651,21 @@ footer {
 .lang-btn {
   background: none;
   border: none;
-  font-size: 1.25rem;
-  line-height: 1;
   cursor: pointer;
-  padding: 0.15rem 0.2rem;
-  opacity: 0.4;
+  padding: 0.1rem 0.15rem;
+  opacity: 0.45;
   transition: opacity 0.2s, transform 0.15s;
   border-radius: 3px;
+  display: flex;
+  align-items: center;
 }
-.lang-btn:hover  { opacity: 0.75; transform: scale(1.12); }
-.lang-btn.active { opacity: 1; transform: scale(1.1); }
+.lang-btn img {
+  display: block;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+}
+.lang-btn:hover  { opacity: 0.8; transform: scale(1.1); }
+.lang-btn.active { opacity: 1; transform: scale(1.08); }
 
 /* MODAL GUIDA */
 .modal-overlay {
