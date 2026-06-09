@@ -645,28 +645,22 @@ footer {
 /* LANG SWITCHER */
 .lang-switcher {
   display: flex;
-  gap: 0.15rem;
+  gap: 0.1rem;
   align-items: center;
 }
 .lang-btn {
   background: none;
   border: none;
-  font-family: 'Jost', sans-serif;
-  font-size: 0.68rem;
-  letter-spacing: 0.12em;
-  color: var(--muted);
-  cursor: pointer;
-  padding: 0.2rem 0.35rem;
-  transition: color 0.2s;
+  font-size: 1.25rem;
   line-height: 1;
+  cursor: pointer;
+  padding: 0.15rem 0.2rem;
+  opacity: 0.4;
+  transition: opacity 0.2s, transform 0.15s;
+  border-radius: 3px;
 }
-.lang-btn:hover  { color: var(--deep); }
-.lang-btn.active { color: var(--deep); font-weight: 500; }
-.lang-sep {
-  color: var(--border);
-  font-size: 0.6rem;
-  user-select: none;
-}
+.lang-btn:hover  { opacity: 0.75; transform: scale(1.12); }
+.lang-btn.active { opacity: 1; transform: scale(1.1); }
 
 /* MODAL GUIDA */
 .modal-overlay {
