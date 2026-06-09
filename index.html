@@ -663,21 +663,34 @@
   /* ── MOBILE 768px ── */
   @media (max-width: 768px) {
 
-    nav { padding: 1rem 1.5rem; }
+    nav { padding: 1rem 1.5rem; flex-wrap: wrap; }
     .nav-toggle { display: flex; }
     .nav-links {
-      display: none;
-      position: fixed;
-      inset: 0;
+      display: flex;
+      width: 100%;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 2.5rem;
-      background: var(--light);
-      z-index: 99;
+      align-items: stretch;
+      gap: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.3s ease;
+      padding: 0;
     }
-    .nav-links.mobile-open { display: flex; }
-    .nav-links a { font-size: 0.88rem; letter-spacing: 0.2em; color: var(--deep); }
+    .nav-links.mobile-open {
+      max-height: 320px;
+      padding: 0.5rem 0;
+      border-top: 1px solid var(--border);
+    }
+    .nav-links li { border-bottom: 1px solid var(--border); }
+    .nav-links li:last-child { border-bottom: none; }
+    .nav-links a {
+      display: block;
+      padding: 0.9rem 0;
+      text-align: center;
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      color: var(--deep);
+    }
 
     section { padding: 4rem 1.5rem; }
     .gallery { padding-bottom: 0; }
@@ -1287,13 +1300,11 @@ const navLinksList = document.querySelector('.nav-links');
 navToggle.addEventListener('click', () => {
   const isOpen = navToggle.classList.toggle('open');
   navLinksList.classList.toggle('mobile-open', isOpen);
-  document.body.style.overflow = isOpen ? 'hidden' : '';
 });
 document.querySelectorAll('.nav-links a').forEach(a => {
   a.addEventListener('click', () => {
     navToggle.classList.remove('open');
     navLinksList.classList.remove('mobile-open');
-    document.body.style.overflow = '';
   });
 });
 
