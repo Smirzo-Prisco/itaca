@@ -1,12 +1,70 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="it" id="html-root">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Itaca Villa — Conca Verde, Sardegna</title>
+<title id="page-title">Itaca Villa — Villa vacanze a Conca Verde, Sardegna</title>
+<meta name="description" id="meta-description" content="Villa vacanze con vista sull'Arcipelago della Maddalena a Conca Verde, Sardegna. Prenota su Airbnb o Booking.com.">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Itaca Villa">
+<meta property="og:url" id="og-url" content="https://itacavilla.it/">
+<meta property="og:title" id="og-title" content="Itaca Villa — Villa vacanze a Conca Verde, Sardegna">
+<meta property="og:description" id="og-description" content="Villa vacanze con vista sull'Arcipelago della Maddalena a Conca Verde, Sardegna.">
+<meta property="og:image" content="https://itacavilla.it/img/concaverde.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="800">
+<meta property="og:locale" content="it_IT">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" id="tw-title" content="Itaca Villa — Villa vacanze a Conca Verde, Sardegna">
+<meta name="twitter:description" id="tw-description" content="Villa vacanze con vista sull'Arcipelago della Maddalena a Conca Verde, Sardegna.">
+<meta name="twitter:image" content="https://itacavilla.it/img/concaverde.jpg">
+
+<!-- Canonical & hreflang -->
+<link rel="canonical" id="link-canonical" href="https://itacavilla.it/">
+<link rel="alternate" hreflang="it" href="https://itacavilla.it/">
+<link rel="alternate" hreflang="en" href="https://itacavilla.it/?lang=en">
+<link rel="alternate" hreflang="fr" href="https://itacavilla.it/?lang=fr">
+<link rel="alternate" hreflang="de" href="https://itacavilla.it/?lang=de">
+<link rel="alternate" hreflang="x-default" href="https://itacavilla.it/">
+
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  "name": "Itaca Villa",
+  "description": "Villa vacanze con vista sull'Arcipelago della Maddalena a Conca Verde, Sardegna.",
+  "url": "https://itacavilla.it",
+  "image": "https://itacavilla.it/img/concaverde.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via Ulisse, 17",
+    "addressLocality": "Conca Verde",
+    "addressRegion": "OT",
+    "postalCode": "07028",
+    "addressCountry": "IT"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 41.216570,
+    "longitude": 9.273446
+  },
+  "sameAs": [
+    "https://www.airbnb.it/rooms/1615861133406857108",
+    "https://www.booking.com/Share-nxU0YVg"
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="js/translations.js"></script>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -664,6 +722,7 @@
   @media (max-width: 768px) {
 
     nav { padding: 1rem 1.5rem; flex-wrap: wrap; }
+    .lang-switcher { order: 1; margin-left: auto; margin-right: 0.8rem; }
     .nav-toggle { display: flex; order: 1; }
     .nav-links {
       display: flex;
@@ -744,6 +803,32 @@
     .booking-btns .btn-booking { width: 100%; max-width: 280px; text-align: center; }
   }
 
+  /* LANG SWITCHER */
+  .lang-switcher {
+    display: flex;
+    gap: 0.15rem;
+    align-items: center;
+  }
+  .lang-btn {
+    background: none;
+    border: none;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    cursor: pointer;
+    padding: 0.2rem 0.35rem;
+    transition: color 0.2s;
+    line-height: 1;
+  }
+  .lang-btn:hover { color: var(--deep); }
+  .lang-btn.active { color: var(--deep); font-weight: 500; }
+  .lang-sep {
+    color: var(--border);
+    font-size: 0.6rem;
+    user-select: none;
+  }
+
   /* MODAL GUIDA */
   .modal-overlay {
     display: none;
@@ -803,12 +888,15 @@
 <nav>
   <a href="#" class="nav-logo">Itaca Villa</a>
   <ul class="nav-links">
-    <li><a href="#villa">La Villa</a></li>
-    <li><a href="#guida">Guida Ospiti</a></li>
-    <li><a href="#dintorni">Dintorni</a></li>
-    <li><a href="#arrivo">Come Arrivare</a></li>
-    <li><a href="#contatti">Contatti</a></li>
+    <li><a href="#villa" data-i18n="nav.villa">La Villa</a></li>
+    <li><a href="#guida" data-i18n="nav.guida">Guida Ospiti</a></li>
+    <li><a href="#dintorni" data-i18n="nav.dintorni">Dintorni</a></li>
+    <li><a href="#arrivo" data-i18n="nav.arrivo">Come Arrivare</a></li>
+    <li><a href="#contatti" data-i18n="nav.contatti">Contatti</a></li>
   </ul>
+  <div class="lang-switcher" role="navigation" aria-label="Language">
+    <button class="lang-btn active" data-lang="it">IT</button><span class="lang-sep">|</span><button class="lang-btn" data-lang="en">EN</button><span class="lang-sep">|</span><button class="lang-btn" data-lang="fr">FR</button><span class="lang-sep">|</span><button class="lang-btn" data-lang="de">DE</button>
+  </div>
   <button class="nav-toggle" id="nav-toggle" aria-label="Apri menu">
     <span></span><span></span><span></span>
   </button>
@@ -818,44 +906,44 @@
 <section class="hero" id="home">
   <div class="hero-bg"></div>
   <div class="hero-content">
-    <p class="hero-tag">Conca Verde · Sardegna · Italia</p>
-    <h1>Dove il mare<br><em>incontra il silenzio</em></h1>
-    <p class="hero-sub">Una villa immersa nel verde sardo, con vista sull'arcipelago. Svegliarsi con l'alba e addormentarsi con il suono delle onde.</p>
-    <a href="#villa" class="btn">Scopri la villa</a>
+    <p class="hero-tag" data-i18n="hero.tag">Conca Verde · Sardegna · Italia</p>
+    <h1 data-i18n-html="hero.h1">Dove il mare<br><em>incontra il silenzio</em></h1>
+    <p class="hero-sub" data-i18n="hero.sub">Una villa immersa nel verde sardo, con vista sull'arcipelago. Svegliarsi con l'alba e addormentarsi con il suono delle onde.</p>
+    <a href="#villa" class="btn" data-i18n="hero.btn">Scopri la villa</a>
   </div>
   <div class="scroll-hint">
     <div class="scroll-line"></div>
-    Scorri
+    <span data-i18n="hero.scroll">Scorri</span>
   </div>
 </section>
 
 <!-- INTRO / LA VILLA -->
 <section class="intro" id="villa">
   <div>
-    <p class="section-tag">La Villa</p>
-    <h2 class="section-title">Un rifugio a <em>Conca Verde</em></h2>
+    <p class="section-tag" data-i18n="villa.tag">La Villa</p>
+    <h2 class="section-title" data-i18n-html="villa.title">Un rifugio a <em>Conca Verde</em></h2>
     <div class="divider"></div>
-    <p class="section-text">Itaca Villa sorge in una delle location più belle della Sardegna: una conca naturale immersa nel verde, affacciata sull'arcipelago. Il giardino è sempre fresco e ventilato, le albe sono mozzafiato e le serate si concludono con il suono delle onde del mare.</p>
+    <p class="section-text" data-i18n="villa.text">Itaca Villa sorge in una delle location più belle della Sardegna: una conca naturale immersa nel verde, affacciata sull'arcipelago. Il giardino è sempre fresco e ventilato, le albe sono mozzafiato e le serate si concludono con il suono delle onde del mare.</p>
     <div class="features">
       <div class="feature">
         <div class="feature-icon">🌊</div>
-        <h4>Vista mare</h4>
-        <p>Panorama sull'Arcipelago della Maddalena e le Bocche di Bonifacio, visibile dall'alba al tramonto.</p>
+        <h4 data-i18n="villa.f1_title">Vista mare</h4>
+        <p data-i18n="villa.f1_text">Panorama sull'Arcipelago della Maddalena e le Bocche di Bonifacio, visibile dall'alba al tramonto.</p>
       </div>
       <div class="feature">
         <div class="feature-icon">🌿</div>
-        <h4>Giardino verde</h4>
-        <p>Ombra naturale, brezza costante, profumo di macchia mediterranea.</p>
+        <h4 data-i18n="villa.f2_title">Giardino verde</h4>
+        <p data-i18n="villa.f2_text">Ombra naturale, brezza costante, profumo di macchia mediterranea.</p>
       </div>
       <div class="feature">
         <div class="feature-icon">🌅</div>
-        <h4>Alba spettacolare</h4>
-        <p>Ogni mattina è un'emozione unica, direttamente dalla terrazza.</p>
+        <h4 data-i18n="villa.f3_title">Alba spettacolare</h4>
+        <p data-i18n="villa.f3_text">Ogni mattina è un'emozione unica, direttamente dalla terrazza.</p>
       </div>
       <div class="feature">
         <div class="feature-icon">🔇</div>
-        <h4>Silenzio totale</h4>
-        <p>Solo la natura. Nessun rumore se non quello del mare.</p>
+        <h4 data-i18n="villa.f4_title">Silenzio totale</h4>
+        <p data-i18n="villa.f4_text">Solo la natura. Nessun rumore se non quello del mare.</p>
       </div>
     </div>
   </div>
@@ -865,8 +953,8 @@
 <!-- GALLERY -->
 <section class="gallery" id="gallery">
   <div class="gallery-header">
-    <p class="section-tag">Fotografie</p>
-    <h2 class="section-title">La villa, <em>in immagini</em></h2>
+    <p class="section-tag" data-i18n="gallery.tag">Fotografie</p>
+    <h2 class="section-title" data-i18n-html="gallery.title">La villa, <em>in immagini</em></h2>
   </div>
   <div class="gallery-grid">
     <div class="g1"><img src="img/vista.jpeg" alt="Vista mare"></div>
@@ -879,59 +967,59 @@
 
 <!-- GUIDA OSPITI -->
 <section class="guida" id="guida">
-  <p class="section-tag">Guida Ospiti</p>
-  <h2 class="section-title">Tutto quello che<br><em>devi sapere</em></h2>
+  <p class="section-tag" data-i18n="guida.tag">Guida Ospiti</p>
+  <h2 class="section-title" data-i18n-html="guida.title">Tutto quello che<br><em>devi sapere</em></h2>
   <div class="divider"></div>
-  <p class="section-text">Abbiamo preparato una guida completa per rendere il tuo soggiorno perfetto. Clicca su ogni sezione per scoprire istruzioni, consigli e informazioni utili.</p>
+  <p class="section-text" data-i18n="guida.text">Abbiamo preparato una guida completa per rendere il tuo soggiorno perfetto. Clicca su ogni sezione per scoprire istruzioni, consigli e informazioni utili.</p>
 
   <div class="guida-grid">
     <a class="guida-card" href="#" onclick="openModal('acqua'); return false;">
       <div class="guida-card-icon">💧</div>
-      <h3>Acqua</h3>
-      <p>Informazioni sull'acqua potabile, la cisterna e il suo utilizzo corretto.</p>
+      <h3 data-i18n="guida.acqua_title">Acqua</h3>
+      <p data-i18n="guida.acqua_teaser">Informazioni sull'acqua potabile, la cisterna e il suo utilizzo corretto.</p>
     </a>
     <a class="guida-card" href="#" onclick="openModal('brace'); return false;">
       <div class="guida-card-icon">🚫</div>
-      <h3>Brace e fuoco</h3>
-      <p>Informazioni importanti sul divieto di brace, fuochi e barbecue all'interno della proprietà.</p>
+      <h3 data-i18n="guida.brace_title">Brace e fuoco</h3>
+      <p data-i18n="guida.brace_teaser">Informazioni importanti sul divieto di brace, fuochi e barbecue all'interno della proprietà.</p>
     </a>
     <a class="guida-card" href="#" onclick="openModal('elettricita'); return false;">
       <div class="guida-card-icon">⚡</div>
-      <h3>Elettricità</h3>
-      <p>Quadro elettrico, interruttori, cosa fare in caso di blackout.</p>
+      <h3 data-i18n="guida.elettricita_title">Elettricità</h3>
+      <p data-i18n="guida.elettricita_teaser">Quadro elettrico, interruttori, cosa fare in caso di blackout.</p>
     </a>
     <a class="guida-card" href="#" onclick="openModal('wifi'); return false;">
       <div class="guida-card-icon">📶</div>
-      <h3>WiFi & connettività</h3>
-      <p>Password rete, copertura in giardino, alternativa dati mobili.</p>
+      <h3 data-i18n="guida.wifi_title">WiFi & connettività</h3>
+      <p data-i18n="guida.wifi_teaser">Password rete, copertura in giardino, alternativa dati mobili.</p>
     </a>
     <a class="guida-card" href="#" onclick="openModal('rifiuti'); return false;">
       <div class="guida-card-icon">♻️</div>
-      <h3>Raccolta rifiuti</h3>
-      <p>Differenziata, giorni di raccolta, dove trovare i contenitori.</p>
+      <h3 data-i18n="guida.rifiuti_title">Raccolta rifiuti</h3>
+      <p data-i18n="guida.rifiuti_teaser">Differenziata, giorni di raccolta, dove trovare i contenitori.</p>
     </a>
     <a class="guida-card" href="#" onclick="openModal('emergenza'); return false;">
       <div class="guida-card-icon">🚨</div>
-      <h3>Emergenze</h3>
-      <p>Numeri utili, pronto soccorso più vicino, cosa fare in caso di necessità.</p>
+      <h3 data-i18n="guida.emergenza_title">Emergenze</h3>
+      <p data-i18n="guida.emergenza_teaser">Numeri utili, pronto soccorso più vicino, cosa fare in caso di necessità.</p>
     </a>
     <a class="guida-card" href="#" onclick="openModal('accortezze'); return false;">
       <div class="guida-card-icon">🌿</div>
-      <h3>Accortezze & natura</h3>
-      <p>Rispetto del verde, animali selvatici, protezione solare e vento.</p>
+      <h3 data-i18n="guida.accortezze_title">Accortezze & natura</h3>
+      <p data-i18n="guida.accortezze_teaser">Rispetto del verde, animali selvatici, protezione solare e vento.</p>
     </a>
     <a class="guida-card" href="#" onclick="openModal('partenza'); return false;">
       <div class="guida-card-icon">🗝️</div>
-      <h3>Check-out</h3>
-      <p>Come lasciare la villa, dove depositare le chiavi, orari di partenza.</p>
+      <h3 data-i18n="guida.partenza_title">Check-out</h3>
+      <p data-i18n="guida.partenza_teaser">Come lasciare la villa, dove depositare le chiavi, orari di partenza.</p>
     </a>
   </div>
 
   <div class="qr-section">
     <img src="img/qr-code.png" alt="QR Code guida ospiti" width="100" height="100" style="flex-shrink:0;">
     <div class="qr-text">
-      <h4>Hai il QR Code?</h4>
-      <p>Inquadra il codice che trovi all'interno della villa per accedere direttamente a questa guida dal tuo smartphone.</p>
+      <h4 data-i18n="guida.qr_title">Hai il QR Code?</h4>
+      <p data-i18n="guida.qr_text">Inquadra il codice che trovi all'interno della villa per accedere direttamente a questa guida dal tuo smartphone.</p>
     </div>
   </div>
 </section>
@@ -939,48 +1027,48 @@
 <!-- REGOLE -->
 <section class="regole" id="regole">
   <div>
-    <p class="section-tag">Regole della Casa</p>
-    <h2 class="section-title">Per un soggiorno<br><em>sereno per tutti</em></h2>
+    <p class="section-tag" data-i18n="regole.tag">Regole della Casa</p>
+    <h2 class="section-title" data-i18n-html="regole.title">Per un soggiorno<br><em>sereno per tutti</em></h2>
     <div class="divider"></div>
-    <p class="section-text">Piccole accortezze che ci permettono di mantenere Itaca Villa nel suo stato migliore per ogni ospite.</p>
+    <p class="section-text" data-i18n="regole.text">Piccole accortezze che ci permettono di mantenere Itaca Villa nel suo stato migliore per ogni ospite.</p>
   </div>
   <ul class="regola-list">
-    <li><span class="regola-num">01</span><span>Check-in dalle 15:00, check-out entro le 10:00. Orari diversi su richiesta e disponibilità.</span></li>
-    <li><span class="regola-num">02</span><span>Non si fuma all'interno della villa. Il giardino è a disposizione per fumatori.</span></li>
-    <li><span class="regola-num">03</span><span>Rispettare il silenzio notturno dalle 23:00 alle 8:00 in considerazione della natura circostante.</span></li>
-    <li><span class="regola-num">04</span><span>Animali ammessi previo accordo. Vi chiediamo di mantenerli lontano dai mobili interni.</span></li>
-    <li><span class="regola-num">05</span><span>È vietato accendere fuochi, brace o barbecue in qualsiasi area della proprietà. Per cucinare all'aperto sono disponibili i fornelli a induzione.</span></li>
-    <li><span class="regola-num">06</span><span>Raccolta differenziata obbligatoria. Trovate i contenitori e le istruzioni nella guida ospiti.</span></li>
-    <li><span class="regola-num">07</span><span>In caso di problemi contattare direttamente il proprietario. Troverete il numero in bacheca.</span></li>
+    <li><span class="regola-num">01</span><span data-i18n="regole.r1">Check-in dalle 15:00, check-out entro le 10:00. Orari diversi su richiesta e disponibilità.</span></li>
+    <li><span class="regola-num">02</span><span data-i18n="regole.r2">Non si fuma all'interno della villa. Il giardino è a disposizione per fumatori.</span></li>
+    <li><span class="regola-num">03</span><span data-i18n="regole.r3">Rispettare il silenzio notturno dalle 23:00 alle 8:00 in considerazione della natura circostante.</span></li>
+    <li><span class="regola-num">04</span><span data-i18n="regole.r4">Animali ammessi previo accordo. Vi chiediamo di mantenerli lontano dai mobili interni.</span></li>
+    <li><span class="regola-num">05</span><span data-i18n="regole.r5">È vietato accendere fuochi, brace o barbecue in qualsiasi area della proprietà. Per cucinare all'aperto sono disponibili i fornelli a induzione.</span></li>
+    <li><span class="regola-num">06</span><span data-i18n="regole.r6">Raccolta differenziata obbligatoria. Trovate i contenitori e le istruzioni nella guida ospiti.</span></li>
+    <li><span class="regola-num">07</span><span data-i18n="regole.r7">In caso di problemi contattare direttamente il proprietario. Troverete il numero in bacheca.</span></li>
   </ul>
 </section>
 
 <!-- DINTORNI -->
 <section class="dintorni" id="dintorni">
-  <p class="section-tag">Dintorni</p>
-  <h2 class="section-title">Cosa fare<br><em>nei dintorni</em></h2>
+  <p class="section-tag" data-i18n="dintorni.tag">Dintorni</p>
+  <h2 class="section-title" data-i18n-html="dintorni.title">Cosa fare<br><em>nei dintorni</em></h2>
   <div class="divider"></div>
-  <p class="section-text">Conca Verde è il punto di partenza perfetto per scoprire il meglio della Sardegna settentrionale.</p>
+  <p class="section-text" data-i18n="dintorni.text">Conca Verde è il punto di partenza perfetto per scoprire il meglio della Sardegna settentrionale.</p>
   <div class="dintorni-grid">
     <div class="dintorni-card" onclick="openSlider('spiagge')">
       <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80" alt="Spiagge">
       <div class="dintorni-overlay">
-        <h3>Spiagge</h3>
-        <p>Le più belle spiagge dell'isola a pochi minuti</p>
+        <h3 data-i18n="dintorni.spiagge_title">Spiagge</h3>
+        <p data-i18n="dintorni.spiagge_sub">Le più belle spiagge dell'isola a pochi minuti</p>
       </div>
     </div>
     <div class="dintorni-card" onclick="openSlider('luoghi')">
       <img src="https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?w=600&q=80" alt="Luoghi imperdibili">
       <div class="dintorni-overlay">
-        <h3>Luoghi imperdibili</h3>
-        <p>Paesini sardi autentici, mercati e tradizioni</p>
+        <h3 data-i18n="dintorni.luoghi_title">Luoghi imperdibili</h3>
+        <p data-i18n="dintorni.luoghi_sub">Paesini sardi autentici, mercati e tradizioni</p>
       </div>
     </div>
     <div class="dintorni-card" onclick="openSlider('gastronomia')">
       <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80" alt="Enogastronomia">
       <div class="dintorni-overlay">
-        <h3>Gastronomia</h3>
-        <p>Ristoranti tipici, vini locali e prodotti dell'isola</p>
+        <h3 data-i18n="dintorni.gastro_title">Gastronomia</h3>
+        <p data-i18n="dintorni.gastro_sub">Ristoranti tipici, vini locali e prodotti dell'isola</p>
       </div>
     </div>
   </div>
@@ -989,37 +1077,37 @@
 <!-- COME ARRIVARE -->
 <section class="arrivo" id="arrivo">
   <div>
-    <p class="section-tag">Come Arrivare</p>
-    <h2 class="section-title">Trovare<br><em>Itaca Villa</em></h2>
+    <p class="section-tag" data-i18n="arrivo.tag">Come Arrivare</p>
+    <h2 class="section-title" data-i18n-html="arrivo.title">Trovare<br><em>Itaca Villa</em></h2>
     <div class="divider"></div>
-    <p class="section-text">Conca Verde si trova in una posizione privilegiata, facilmente raggiungibile dagli aeroporti della Sardegna settentrionale.</p>
+    <p class="section-text" data-i18n="arrivo.text">Conca Verde si trova in una posizione privilegiata, facilmente raggiungibile dagli aeroporti della Sardegna settentrionale.</p>
     <div class="arrivo-details">
       <div class="arrivo-row">
         <span class="arrivo-row-icon">✈️</span>
         <div class="arrivo-row-text">
-          <h4>Aeroporto più vicino</h4>
-          <p>Olbia Costa Smeralda — circa 40 minuti in auto</p>
+          <h4 data-i18n="arrivo.airport_label">Aeroporto più vicino</h4>
+          <p data-i18n="arrivo.airport_text">Olbia Costa Smeralda — circa 40 minuti in auto</p>
         </div>
       </div>
       <div class="arrivo-row">
         <span class="arrivo-row-icon">🚗</span>
         <div class="arrivo-row-text">
-          <h4>In auto</h4>
-          <p>Da Olbia seguire le indicazioni per Palau, poi per Santa Teresa di Gallura. Le coordinate GPS precise vengono inviate a prenotazione confermata.</p>
+          <h4 data-i18n="arrivo.car_label">In auto</h4>
+          <p data-i18n="arrivo.car_text">Da Olbia seguire le indicazioni per Palau, poi per Santa Teresa di Gallura. Le coordinate GPS precise vengono inviate a prenotazione confermata.</p>
         </div>
       </div>
       <div class="arrivo-row">
         <span class="arrivo-row-icon">⛴️</span>
         <div class="arrivo-row-text">
-          <h4>In traghetto</h4>
-          <p>Porto di Olbia o Golfo Aranci.</p>
+          <h4 data-i18n="arrivo.ferry_label">In traghetto</h4>
+          <p data-i18n="arrivo.ferry_text">Porto di Olbia o Golfo Aranci.</p>
         </div>
       </div>
       <div class="arrivo-row">
         <span class="arrivo-row-icon">🔑</span>
         <div class="arrivo-row-text">
-          <h4>Check-in</h4>
-          <p>Le istruzioni dettagliate per l'accesso vengono inviate 48h prima dell'arrivo.</p>
+          <h4 data-i18n="arrivo.checkin_label">Check-in</h4>
+          <p data-i18n="arrivo.checkin_text">Le istruzioni dettagliate per l'accesso vengono inviate 48h prima dell'arrivo.</p>
         </div>
       </div>
     </div>
@@ -1031,36 +1119,36 @@
 
 <!-- CONTATTI -->
 <section class="contatti" id="contatti">
-  <p class="section-tag">Contatti & Prenotazioni</p>
-  <h2 class="section-title">Prenota il tuo<br><em>soggiorno a Itaca</em></h2>
+  <p class="section-tag" data-i18n="contatti.tag">Contatti & Prenotazioni</p>
+  <h2 class="section-title" data-i18n-html="contatti.title">Prenota il tuo<br><em>soggiorno a Itaca</em></h2>
   <div class="divider"></div>
-  <p class="section-text">Per informazioni, disponibilità e prenotazioni dirette siamo a tua disposizione. Puoi anche prenotare direttamente sulle piattaforme.</p>
+  <p class="section-text" data-i18n="contatti.text">Per informazioni, disponibilità e prenotazioni dirette siamo a tua disposizione. Puoi anche prenotare direttamente sulle piattaforme.</p>
   <div class="contact-grid">
     <a class="contact-item" href="tel:+39XXXXXXXXXX">
       <div class="contact-icon-wrap">📞</div>
-      <span class="contact-label">Telefono</span>
+      <span class="contact-label" data-i18n="contatti.phone_label">Telefono</span>
       <span class="contact-value">+39 XXX XXX XXXX</span>
     </a>
     <a class="contact-item" href="mailto:info@itacavilla.it">
       <div class="contact-icon-wrap">✉️</div>
-      <span class="contact-label">Email</span>
+      <span class="contact-label" data-i18n="contatti.email_label">Email</span>
       <span class="contact-value">info@itacavilla.it</span>
     </a>
     <a class="contact-item" href="https://wa.me/39XXXXXXXXXX">
       <div class="contact-icon-wrap">💬</div>
-      <span class="contact-label">WhatsApp</span>
-      <span class="contact-value">Scrivi subito</span>
+      <span class="contact-label" data-i18n="contatti.whatsapp_label">WhatsApp</span>
+      <span class="contact-value" data-i18n="contatti.whatsapp_value">Scrivi subito</span>
     </a>
   </div>
   <div class="booking-btns">
-    <a href="https://www.airbnb.it/rooms/1615861133406857108" target="_blank" rel="noopener" class="btn-booking btn-airbnb">Prenota su Airbnb</a>
-    <a href="https://www.booking.com/Share-nxU0YVg" target="_blank" rel="noopener" class="btn-booking btn-booking-com">Prenota su Booking.com</a>
+    <a href="https://www.airbnb.it/rooms/1615861133406857108" target="_blank" rel="noopener" class="btn-booking btn-airbnb" data-i18n="contatti.airbnb_btn">Prenota su Airbnb</a>
+    <a href="https://www.booking.com/Share-nxU0YVg" target="_blank" rel="noopener" class="btn-booking btn-booking-com" data-i18n="contatti.booking_btn">Prenota su Booking.com</a>
   </div>
 </section>
 
 <footer>
   <a href="#" class="footer-logo">Itaca Villa</a>
-  <span>Conca Verde, Sardegna · © 2026</span>
+  <span data-i18n="footer.copy">Conca Verde, Sardegna · © 2026</span>
   <span>itacavilla.it</span>
 </footer>
 
@@ -1094,159 +1182,73 @@
 </div>
 
 <script>
-const guide = {
-  acqua: {
-    icon: '💧',
-    title: 'Acqua',
-    body: `
-      <h4>Acqua non potabile</h4>
-      <p>L'acqua del rubinetto <strong>non è potabile</strong>. Per bere e cucinare utilizzare esclusivamente acqua in bottiglia, disponibile nei supermercati locali.</p>
-      <h4>La cisterna</h4>
-      <p>La villa è dotata di una cisterna di raccolta per l'irrigazione del giardino. Non utilizzare quest'acqua per bere o cucinare. Il rubinetto esterno vicino all'orto è collegato alla cisterna.</p>
-      <h4>Risparmio idrico</h4>
-      <p>In estate l'acqua è una risorsa preziosa in Sardegna. Ti chiediamo di usarla con attenzione: docce brevi, rubinetti chiusi durante l'insaponatura, niente irrigazione nelle ore calde. <strong>È vietato lavare l'auto o altri veicoli con l'acqua della villa.</strong></p>
-    `
-  },
-  brace: {
-    icon: '🚫',
-    title: 'Brace e fuoco',
-    body: `
-      <h4>Divieto assoluto</h4>
-      <p>È <strong>vietato accendere brace, barbecue o qualsiasi tipo di fuoco</strong> all'interno della proprietà, sia in giardino che nelle aree esterne.</p>
-      <h4>Perché questo divieto</h4>
-      <p>La Sardegna è una delle regioni a più alto rischio incendio d'Italia. La macchia mediterranea circostante è estremamente infiammabile, specialmente nei mesi estivi. Il rispetto di questo divieto protegge la villa, il territorio e tutti gli ospiti.</p>
-      <h4>Per cucinare all'aperto</h4>
-      <p>La villa è dotata di fornelli a induzione. Vi chiediamo di non portare in villa carbonella, legna da ardere o accendifuoco.</p>
-    `
-  },
-  elettricita: {
-    icon: '⚡',
-    title: 'Elettricità',
-    body: `
-      <h4>Quadro elettrico</h4>
-      <p>Il quadro elettrico si trova nel corridoio centrale, nell'armadietto a muro. È accessibile a tutti gli ospiti.</p>
-      <h4>In caso di blackout</h4>
-      <p>Se si spegne improvvisamente la corrente, controlla prima il quadro: probabilmente è scattato un interruttore differenziale. Riportalo su (verso l'alto). Se si ripete, evita di usare più elettrodomestici grandi contemporaneamente.</p>
-      <h4>Attenzione</h4>
-      <p>Non usare ciabatte elettriche sovraccariche. Stacca gli elettrodomestici quando esci per lunghi periodi. Il boiler richiede circa 30 minuti per riscaldare l'acqua se si è esaurita.</p>
-    `
-  },
-  wifi: {
-    icon: '📶',
-    title: 'WiFi & Connettività',
-    body: `
-      <h4>Rete WiFi</h4>
-      <p>Nome rete: <strong>ItacaVilla_Guest</strong><br>Password: disponibile nella bacheca in cucina e alla voce "WiFi" della targhetta sul router.</p>
-      <h4>Copertura</h4>
-      <p>Il segnale copre tutta la villa e la terrazza principale. In giardino il segnale potrebbe essere debole: in quel caso usa i dati mobili.</p>
-      <h4>Connessione dati</h4>
-      <p>In zona la copertura 4G di TIM e Vodafone è buona. Wind/3 ha copertura limitata. Consigliamo una SIM TIM per la massima affidabilità.</p>
-    `
-  },
-  rifiuti: {
-    icon: '♻️',
-    title: 'Raccolta Differenziata',
-    body: `
-      <h4>I contenitori</h4>
-      <p>Troverete i contenitori colorati nel ripostiglio esterno e in cucina:<br>
-      🟡 Giallo — Plastica e lattine<br>
-      🔵 Blu — Carta e cartone<br>
-      🟢 Verde — Vetro<br>
-      ⚫ Nero — Indifferenziato<br>
-      🟤 Marrone — Organico</p>
-      <h4>Giorni di raccolta</h4>
-      <p>Il calendario dettagliato è affisso in cucina. In generale: organico e indifferenziato 2 volte a settimana, gli altri materiali una volta. I sacchetti vanno lasciati sul ciglio della strada entro le 7:00.</p>
-    `
-  },
-  emergenza: {
-    icon: '🚨',
-    title: 'Emergenze',
-    body: `
-      <h4>Numeri di emergenza</h4>
-      <p>
-      🚑 Emergenze generali: <strong>112</strong><br>
-      🚒 Vigili del Fuoco: <strong>115</strong><br>
-      🚓 Carabinieri: <strong>112</strong><br>
-      🏥 Guardia Medica locale: affissa in bacheca
-      </p>
-      <h4>Pronto Soccorso più vicino</h4>
-      <p>Ospedale di riferimento: indicato nella bacheca in ingresso, con indirizzo e percorso.</p>
-      <h4>Proprietario</h4>
-      <p>Per qualsiasi urgenza non medica (problemi alla casa, chiavi, ecc.) contattate direttamente il proprietario al numero indicato in bacheca. Siamo sempre disponibili.</p>
-      <h4>Incendi</h4>
-      <p>In caso di principio di incendio: allontanarsi, chiamare il 115 e avvertire il proprietario. Non tentare di spegnere autonomamente incendi che si estendono alla vegetazione.</p>
-    `
-  },
-  accortezze: {
-    icon: '🌿',
-    title: 'Accortezze & Natura',
-    body: `
-      <h4>Il vento</h4>
-      <p>Conca Verde è rinomata per la brezza costante — è ciò che la rende fresca anche d'estate. In caso di vento forte, assicurate i cuscini dei lettini e chiudete le finestre esposte a nord.</p>
-      <h4>Fauna locale</h4>
-      <p>Potreste incontrare lucertole, uccelli e raramente qualche cinghiale nei dintorni. Non alimentarli. I cinghiali non sono pericolosi ma vanno tenuti a distanza.</p>
-      <h4>Protezione solare</h4>
-      <p>In Sardegna il sole è intenso anche in primavera. Consigliamo protezione minima 50 e di evitare esposizioni prolungate nelle ore centrali (12-16).</p>
-      <h4>Rispetto del verde</h4>
-      <p>La macchia mediterranea è un ecosistema fragile. Non raccogliere piante o fiori selvatici, non accendere fuochi all'esterno delle aree predisposte, specialmente da giugno ad agosto.</p>
-    `
-  },
-  partenza: {
-    icon: '🗝️',
-    title: 'Check-out',
-    body: `
-      <h4>Orario di partenza</h4>
-      <p>Il check-out è previsto entro le 10:00. Per richieste di late check-out contattateci con anticipo: cercheremo di venirvi incontro.</p>
-      <h4>Prima di partire</h4>
-      <p>— Lasciare le stoviglie pulite o nel lavastoviglie avviato<br>
-      — Svuotare il frigorifero dagli alimenti deperibili<br>
-      — Raccogliere i rifiuti nei sacchetti appositi<br>
-      — Chiudere tutte le finestre e le tapparelle<br>
-      — Staccare il condizionatore e le luci<br>
-      — Chiudere il gas (rubinetto sul lato esterno sinistro della cucina)</p>
-      <h4>Le chiavi</h4>
-      <p>Depositare le chiavi nella cassettina a combinazione all'ingresso. Il codice vi verrà comunicato al check-in. In alternativa potete consegnarle direttamente al proprietario.</p>
-      <h4>Grazie</h4>
-      <p>Speriamo che il vostro soggiorno a Itaca Villa sia stato indimenticabile. Saremo felici di accogliervi di nuovo. Una recensione su Airbnb o Booking.com è per noi molto preziosa 🙏</p>
-    `
-  }
-};
+/* ── i18n engine ──────────────────────────────────────────────────── */
 
-const sliderData = {
-  spiagge: {
-    title: 'Spiagge',
-    slides: [
-      { src: 'img/spiaggia.jpeg', caption: 'Spiaggia di Conca Verde raggiungibile a piedi in 5 minuti' },
-      { src: 'img/renabianca.jpg', caption: 'La spiaggia di Santa Teresa di Gallura a 10 minuti di macchina' },
-      { src: 'img/valledellerica.jpg', caption: 'La spiaggia di Valle dell\'Erica è un gioiello a 5 minuti di macchina' },
-      { src: 'https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1400&q=85', caption: 'La spiaggia della Marmorata si trova a 5 minuti di macchina' },
-      { src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1400&q=85', caption: 'La spiaggia di Costa Paradiso si trova a meno di un\'ora di macchina ed è una delle spiagge più belle dell\'isola raggiungibile solamente attraverso un breve percorso a piedi all\'interno della macchia e lungo la costa' },
-    ]
-  },
-  luoghi: {
-    title: 'Luoghi imperdibili',
-    slides: [
-      { src: 'img/capotesta.jpg', caption: 'Il tramonto più suggestivo al mondo' },
-      { src: 'https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?w=1400&q=85', caption: 'Santa Teresa di Gallura — il borgo più vicino, con il caratteristico centro storico affacciato sullo Stretto di Bonifacio' },
-      { src: 'https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=1400&q=85', caption: 'La Maddalena — l\'isola principale dell\'arcipelago, raggiungibile in traghetto da Palau in 15 minuti' },
-      { src: 'https://images.unsplash.com/photo-1555992336-03a23c7b20ee?w=1400&q=85', caption: 'Aggius — piccolo paese nell\'entroterra gallurese, famoso per i tappeti sardi e il Museo Etnografico' },
-    ]
-  },
-  gastronomia: {
-    title: 'Gastronomia',
-    slides: [
-      { src: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1400&q=85', caption: 'I ristoranti di Santa Teresa — pesce freschissimo, aragosta gallurese e antipasti di mare' },
-      { src: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1400&q=85', caption: 'Culurgiones e pasta fresca — i primi piatti della tradizione gallurese, da provare nei ristoranti tipici' },
-      { src: 'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=1400&q=85', caption: 'Cannonau e Vermentino — i vini sardi da abbinare ai prodotti locali: formaggi, salumi e miele di corbezzolo' },
-    ]
+function getCurrentLang() {
+  const p = new URLSearchParams(window.location.search).get('lang');
+  return ['en', 'fr', 'de'].includes(p) ? p : 'it';
+}
+
+function setLang(lang) {
+  const url = new URL(window.location.href);
+  if (lang === 'it') {
+    url.searchParams.delete('lang');
+  } else {
+    url.searchParams.set('lang', lang);
   }
-};
+  window.location.href = url.toString();
+}
+
+function t(key) {
+  const parts = key.split('.');
+  let obj = TRANSLATIONS[getCurrentLang()];
+  for (const p of parts) { if (obj == null) return ''; obj = obj[p]; }
+  return obj ?? '';
+}
+
+function applyLang() {
+  const lang = getCurrentLang();
+  document.getElementById('html-root').lang = lang;
+
+  // SEO meta
+  const tr = TRANSLATIONS[lang];
+  document.getElementById('page-title').textContent      = tr.meta.title;
+  document.getElementById('meta-description').content   = tr.meta.description;
+  document.getElementById('og-title').content           = tr.meta.title;
+  document.getElementById('og-description').content     = tr.meta.description;
+  document.getElementById('tw-title').content           = tr.meta.title;
+  document.getElementById('tw-description').content     = tr.meta.description;
+  const canonical = lang === 'it' ? 'https://itacavilla.it/' : `https://itacavilla.it/?lang=${lang}`;
+  document.getElementById('og-url').content             = canonical;
+  document.getElementById('link-canonical').href        = canonical;
+
+  // data-i18n (textContent)
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    el.textContent = t(el.dataset.i18n);
+  });
+  // data-i18n-html (innerHTML)
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    el.innerHTML = t(el.dataset.i18nHtml);
+  });
+
+  // Active lang button
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+}
+
+/* ── Slider ────────────────────────────────────────────────────────── */
 
 let currentSlider = null;
-let currentIndex = 0;
+let currentIndex  = 0;
 
 function openSlider(key) {
-  currentSlider = sliderData[key];
+  const lang   = getCurrentLang();
+  const slTr   = TRANSLATIONS[lang].sliders[key];
+  currentSlider = {
+    title:  slTr.title,
+    slides: slTr.slides.map((s, i) => ({ src: SLIDER_SRCS[key][i], caption: s.caption })),
+  };
   currentIndex = 0;
   updateSlider();
   document.getElementById('slider-overlay').classList.add('open');
@@ -1260,11 +1262,12 @@ function closeSlider() {
 
 function updateSlider() {
   const slide = currentSlider.slides[currentIndex];
-  document.getElementById('slider-img').src = slide.src;
-  document.getElementById('slider-img').alt = slide.caption;
+  document.getElementById('slider-img').src         = slide.src;
+  document.getElementById('slider-img').alt         = slide.caption;
   document.getElementById('slider-caption').textContent = slide.caption;
-  document.getElementById('slider-title').textContent = currentSlider.title;
-  document.getElementById('slider-counter').textContent = `${currentIndex + 1} / ${currentSlider.slides.length}`;
+  document.getElementById('slider-title').textContent   = currentSlider.title;
+  document.getElementById('slider-counter').textContent =
+    `${currentIndex + 1} / ${currentSlider.slides.length}`;
 }
 
 function sliderPrev() {
@@ -1277,11 +1280,14 @@ function sliderNext() {
   updateSlider();
 }
 
+/* ── Modal ─────────────────────────────────────────────────────────── */
+
 function openModal(key) {
-  const g = guide[key];
-  document.getElementById('modal-icon').textContent = g.icon;
-  document.getElementById('modal-title').textContent = g.title;
-  document.getElementById('modal-body').innerHTML = g.body;
+  const lang = getCurrentLang();
+  const m    = TRANSLATIONS[lang].modals[key];
+  document.getElementById('modal-icon').textContent  = GUIDE_ICONS[key];
+  document.getElementById('modal-title').textContent = m.title;
+  document.getElementById('modal-body').innerHTML    = m.body;
   document.getElementById('modal-overlay').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
@@ -1291,16 +1297,18 @@ function closeModal() {
   document.body.style.overflow = '';
 }
 
+/* ── Events ────────────────────────────────────────────────────────── */
+
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') { closeModal(); closeSlider(); }
   if (document.getElementById('slider-overlay').classList.contains('open')) {
-    if (e.key === 'ArrowLeft') sliderPrev();
+    if (e.key === 'ArrowLeft')  sliderPrev();
     if (e.key === 'ArrowRight') sliderNext();
   }
 });
 
 // Hamburger menu
-const navToggle = document.getElementById('nav-toggle');
+const navToggle    = document.getElementById('nav-toggle');
 const navLinksList = document.querySelector('.nav-links');
 navToggle.addEventListener('click', () => {
   const isOpen = navToggle.classList.toggle('open');
@@ -1313,14 +1321,22 @@ document.querySelectorAll('.nav-links a').forEach(a => {
   });
 });
 
+// Language switcher
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => setLang(btn.dataset.lang));
+});
+
 // Swipe per slider su mobile
 let touchStartX = 0;
-const sliderEl = document.getElementById('slider-overlay');
+const sliderEl  = document.getElementById('slider-overlay');
 sliderEl.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
-sliderEl.addEventListener('touchend', e => {
+sliderEl.addEventListener('touchend',   e => {
   const diff = touchStartX - e.changedTouches[0].clientX;
   if (Math.abs(diff) > 50) diff > 0 ? sliderNext() : sliderPrev();
 });
+
+// Apply translations on load
+document.addEventListener('DOMContentLoaded', applyLang);
 </script>
 </body>
 </html>
