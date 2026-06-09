@@ -630,6 +630,105 @@
     color: rgba(255,255,255,0.6);
   }
 
+  /* ── HAMBURGER ── */
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 101;
+  }
+  .nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: var(--deep);
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  .nav-toggle.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2) { opacity: 0; }
+  .nav-toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+  /* ── TABLET 900px ── */
+  @media (max-width: 900px) {
+    .intro { gap: 3rem; }
+    .regole { gap: 3rem; }
+    .dintorni-grid { grid-template-columns: 1fr 1fr; }
+    .arrivo { gap: 3rem; }
+  }
+
+  /* ── MOBILE 768px ── */
+  @media (max-width: 768px) {
+
+    nav { padding: 1rem 1.5rem; }
+    .nav-toggle { display: flex; }
+    .nav-links {
+      display: none;
+      position: fixed;
+      inset: 0;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      background: var(--light);
+      z-index: 99;
+    }
+    .nav-links.mobile-open { display: flex; }
+    .nav-links a { font-size: 0.88rem; letter-spacing: 0.2em; color: var(--deep); }
+
+    section { padding: 4rem 1.5rem; }
+    .gallery { padding-bottom: 0; }
+
+    .hero-content { padding: 0 1.5rem; }
+    .scroll-hint { display: none; }
+
+    .intro { grid-template-columns: 1fr; gap: 2rem; }
+    .intro-img { height: 260px; order: -1; }
+    .features { gap: 1rem; }
+
+    .gallery-grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 220px 160px 160px;
+      gap: 4px;
+    }
+    .g1 { grid-column: span 2; grid-row: span 1; }
+    .g2, .g3, .g4, .g5 { grid-column: span 1; grid-row: span 1; }
+
+    .qr-section { gap: 1.5rem; padding: 1.8rem; }
+
+    .regole { grid-template-columns: 1fr; gap: 2rem; }
+
+    .dintorni-grid { grid-template-columns: 1fr; }
+    .dintorni-card { height: 240px; }
+
+    .arrivo { grid-template-columns: 1fr; gap: 2.5rem; }
+    .map-embed { height: 280px; }
+    .map-embed iframe { height: 280px !important; }
+
+    .booking-btns { flex-direction: column; align-items: center; }
+
+    footer { flex-direction: column; gap: 0.6rem; text-align: center; padding: 2rem 1.5rem; }
+
+    .modal { padding: 2rem 1.5rem; }
+    .modal-overlay { padding: 1rem; }
+
+    .slider-body { padding: 1rem 0.5rem; gap: 0.5rem; }
+    .slider-btn { width: 36px; height: 36px; font-size: 1rem; }
+    .slider-header { padding: 1rem 1.2rem; }
+    .slider-caption { font-size: 0.92rem; }
+  }
+
+  /* ── SMALL MOBILE 480px ── */
+  @media (max-width: 480px) {
+    .features { grid-template-columns: 1fr; }
+    .contact-grid { gap: 1.2rem; }
+    .qr-section { flex-direction: column; }
+    .booking-btns .btn-booking { width: 100%; max-width: 280px; text-align: center; }
+  }
+
   /* MODAL GUIDA */
   .modal-overlay {
     display: none;
@@ -695,6 +794,9 @@
     <li><a href="#arrivo">Come Arrivare</a></li>
     <li><a href="#contatti">Contatti</a></li>
   </ul>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Apri menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- HERO -->
@@ -1177,6 +1279,31 @@ document.addEventListener('keydown', e => {
     if (e.key === 'ArrowLeft') sliderPrev();
     if (e.key === 'ArrowRight') sliderNext();
   }
+});
+
+// Hamburger menu
+const navToggle = document.getElementById('nav-toggle');
+const navLinksList = document.querySelector('.nav-links');
+navToggle.addEventListener('click', () => {
+  const isOpen = navToggle.classList.toggle('open');
+  navLinksList.classList.toggle('mobile-open', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+});
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => {
+    navToggle.classList.remove('open');
+    navLinksList.classList.remove('mobile-open');
+    document.body.style.overflow = '';
+  });
+});
+
+// Swipe per slider su mobile
+let touchStartX = 0;
+const sliderEl = document.getElementById('slider-overlay');
+sliderEl.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+sliderEl.addEventListener('touchend', e => {
+  const diff = touchStartX - e.changedTouches[0].clientX;
+  if (Math.abs(diff) > 50) diff > 0 ? sliderNext() : sliderPrev();
 });
 </script>
 </body>
