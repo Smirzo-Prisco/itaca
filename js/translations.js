@@ -93,7 +93,7 @@ const TRANSLATIONS = {
         body: `<h4>Acqua non potabile</h4>
 <p>L'acqua del rubinetto <strong>non è potabile</strong>. Per bere e cucinare utilizzare esclusivamente acqua in bottiglia, disponibile nei supermercati locali.</p>
 <h4>La cisterna</h4>
-<p>La villa è dotata di una cisterna di raccolta per l'irrigazione del giardino. Non utilizzare quest'acqua per bere o cucinare. Il rubinetto esterno vicino all'orto è collegato alla cisterna.</p>
+<p>La villa è dotata di una cisterna di raccolta in caso di emergenza a causa dell'assenza del flusso ordinario. Non utilizzare quest'acqua per bere o cucinare. È possibile utilizzare i rubinetti esterni presenti in giardino.</p>
 <h4>Risparmio idrico</h4>
 <p>In estate l'acqua è una risorsa preziosa in Sardegna. Ti chiediamo di usarla con attenzione: docce brevi, rubinetti chiusi durante l'insaponatura, niente irrigazione nelle ore calde. <strong>È vietato lavare l'auto o altri veicoli con l'acqua della villa.</strong></p>`
       },
@@ -109,32 +109,33 @@ const TRANSLATIONS = {
       elettricita: {
         title: 'Elettricità',
         body: `<h4>Quadro elettrico</h4>
-<p>Il quadro elettrico si trova nel corridoio centrale, nell'armadietto a muro. È accessibile a tutti gli ospiti.</p>
+<p>Il quadro elettrico si trova tra la porta di ingresso e il frigorifero, dietro ad un piccolo quadro. È accessibile a tutti gli ospiti.</p>
 <h4>In caso di blackout</h4>
 <p>Se si spegne improvvisamente la corrente, controlla prima il quadro: probabilmente è scattato un interruttore differenziale. Riportalo su (verso l'alto). Se si ripete, evita di usare più elettrodomestici grandi contemporaneamente.</p>
 <h4>Attenzione</h4>
-<p>Non usare ciabatte elettriche sovraccariche. Stacca gli elettrodomestici quando esci per lunghi periodi. Il boiler richiede circa 30 minuti per riscaldare l'acqua se si è esaurita.</p>`
+<p>Non usare ciabatte elettriche sovraccariche.</p>
+<p><strong><u>— Non utilizzare tutti i fornelli a induzione contemporaneamente alla massima potenza per un periodo prolungato.</u></strong><br>
+<strong><u>— Evitare di avviare più di due lavatrici consecutive.</u></strong></p>`
       },
       wifi: {
         title: 'WiFi & Connettività',
         body: `<h4>Rete WiFi</h4>
-<p>Nome rete: <strong>ItacaVilla_Guest</strong><br>Password: disponibile nella bacheca in cucina e alla voce "WiFi" della targhetta sul router.</p>
+<p>Nome rete: <strong>itacawifi</strong><br>Password: disponibile in loco.</p>
 <h4>Copertura</h4>
-<p>Il segnale copre tutta la villa e la terrazza principale. In giardino il segnale potrebbe essere debole: in quel caso usa i dati mobili.</p>
+<p>Il segnale copre tutta la villa e la veranda. In giardino il segnale potrebbe essere debole: in quel caso usa i dati mobili.</p>
 <h4>Connessione dati</h4>
 <p>In zona la copertura 4G di TIM e Vodafone è buona. Wind/3 ha copertura limitata. Consigliamo una SIM TIM per la massima affidabilità.</p>`
       },
       rifiuti: {
         title: 'Raccolta Differenziata',
-        body: `<h4>I contenitori</h4>
-<p>Troverete i contenitori colorati nel ripostiglio esterno e in cucina:<br>
-🟡 Giallo — Plastica e lattine<br>
-🔵 Blu — Carta e cartone<br>
-🟢 Verde — Vetro<br>
-⚫ Nero — Indifferenziato<br>
-🟤 Marrone — Organico</p>
-<h4>Giorni di raccolta</h4>
-<p>Il calendario dettagliato è affisso in cucina. In generale: organico e indifferenziato 2 volte a settimana, gli altri materiali una volta. I sacchetti vanno lasciati sul ciglio della strada entro le 7:00.</p>`
+        body: `<h4>Come funziona</h4>
+<p>A Conca Verde (Santa Teresa di Gallura), la raccolta differenziata segue il sistema porta a porta con calendari specifici per le "Zone a Mare". I mastelli/sacchi vanno esposti sulla via pubblica dalle 20:00 del giorno precedente alle 05:00 del giorno di raccolta.</p>
+<h4>Regole per il conferimento</h4>
+<p>— Esposizione: il contenitore va posto davanti al proprio numero civico/cancello ed essere ben visibile.<br>
+— Se non puoi rispettare gli orari del porta a porta, puoi portare i rifiuti all'Isola Ecologica subito dopo la spiaggia, sulla destra, posta in uno spiazzo sterrato. L'isola ecologica è disponibile h24.</p>
+<h4>Link utili</h4>
+<p><a href="https://www.santateresagalluraturismo.com/wp-content/uploads/2026/07/UTENZE-PORTA-A-PORTA-ALTA-STAGIONE.LUGLIO-1.pdf" target="_blank" rel="noopener">Consulta il calendario</a><br>
+<a href="https://municipium-images-production.s3-eu-west-1.amazonaws.com/s3/6523/allegati/guida-alal-raccolta-comuni-alta-gallura-2022.pdf" target="_blank" rel="noopener">Guida raccolta differenziata</a></p>`
       },
       emergenza: {
         title: 'Emergenze',
@@ -142,9 +143,9 @@ const TRANSLATIONS = {
 <p>🚑 Emergenze generali: <strong>112</strong><br>
 🚒 Vigili del Fuoco: <strong>115</strong><br>
 🚓 Carabinieri: <strong>112</strong><br>
-🏥 Guardia Medica locale: affissa in bacheca</p>
+🏥 Guardia Medica locale: via Carlo Alberto 6 (tel. 0789 552867) - Santa Teresa di Gallura.</p>
 <h4>Pronto Soccorso più vicino</h4>
-<p>Ospedale di riferimento: indicato nella bacheca in ingresso, con indirizzo e percorso.</p>
+<p>La Guardia Medica (Continuità Assistenziale) a Santa Teresa Gallura si trova temporaneamente in via Carlo Alberto 6 (tel. 0789 552867). È attiva negli orari notturni, nei festivi e prefestivi. Per le emergenze gravi, chiama sempre il 112.</p>
 <h4>Proprietario</h4>
 <p>Per qualsiasi urgenza non medica (problemi alla casa, chiavi, ecc.) contattate direttamente il proprietario al numero indicato in bacheca. Siamo sempre disponibili.</p>
 <h4>Incendi</h4>
@@ -166,14 +167,12 @@ const TRANSLATIONS = {
         body: `<h4>Orario di partenza</h4>
 <p>Il check-out è previsto entro le 10:00. Per richieste di late check-out contattateci con anticipo: cercheremo di venirvi incontro.</p>
 <h4>Prima di partire</h4>
-<p>— Lasciare le stoviglie pulite o nel lavastoviglie avviato<br>
-— Svuotare il frigorifero dagli alimenti deperibili<br>
+<p>— Svuotare il frigorifero dagli alimenti deperibili<br>
 — Raccogliere i rifiuti nei sacchetti appositi<br>
-— Chiudere tutte le finestre e le tapparelle<br>
-— Staccare il condizionatore e le luci<br>
-— Chiudere il gas (rubinetto sul lato esterno sinistro della cucina)</p>
+— Chiudere tutte le finestre<br>
+— Spegnere tutte le luci</p>
 <h4>Le chiavi</h4>
-<p>Depositare le chiavi nella cassettina a combinazione all'ingresso. Il codice vi verrà comunicato al check-in. In alternativa potete consegnarle direttamente al proprietario.</p>
+<p>Depositare le chiavi nella cassettina a combinazione all'ingresso. Il codice vi verrà comunicato al check-in.</p>
 <h4>Grazie</h4>
 <p>Speriamo che il vostro soggiorno a Itaca Villa sia stato indimenticabile. Saremo felici di accogliervi di nuovo. Una recensione su Airbnb o Booking.com è per noi molto preziosa 🙏</p>`
       },
@@ -298,7 +297,7 @@ const TRANSLATIONS = {
         body: `<h4>Non-potable water</h4>
 <p>Tap water is <strong>not safe to drink</strong>. For drinking and cooking, use only bottled water, available at local supermarkets.</p>
 <h4>The cistern</h4>
-<p>The villa has a rainwater cistern for garden irrigation. Do not use this water for drinking or cooking. The outdoor tap near the vegetable garden is connected to the cistern.</p>
+<p>The villa has an emergency collection cistern in case the regular water supply is interrupted. Do not use this water for drinking or cooking. You can use the outdoor taps in the garden.</p>
 <h4>Water conservation</h4>
 <p>In summer, water is a precious resource in Sardinia. Please use it carefully: short showers, close taps while soaping up, no irrigation during hot hours. <strong>Washing cars or other vehicles with the villa's water is prohibited.</strong></p>`
       },
@@ -314,32 +313,33 @@ const TRANSLATIONS = {
       elettricita: {
         title: 'Electricity',
         body: `<h4>Electrical panel</h4>
-<p>The electrical panel is in the central corridor, in the wall cabinet. It is accessible to all guests.</p>
+<p>The electrical panel is located between the front door and the fridge, behind a small panel cover. It is accessible to all guests.</p>
 <h4>In case of blackout</h4>
 <p>If the power suddenly goes out, check the panel first: a circuit breaker has probably tripped. Reset it (push up). If it happens again, avoid using several large appliances simultaneously.</p>
 <h4>Important</h4>
-<p>Do not use overloaded extension cords. Unplug appliances when leaving for extended periods. The boiler takes about 30 minutes to reheat if the hot water runs out.</p>`
+<p>Do not use overloaded extension cords.</p>
+<p><strong><u>— Do not run all the induction hobs at maximum power at the same time for a prolonged period.</u></strong><br>
+<strong><u>— Avoid running more than two washing machine cycles in a row.</u></strong></p>`
       },
       wifi: {
         title: 'WiFi & Connectivity',
         body: `<h4>WiFi network</h4>
-<p>Network name: <strong>ItacaVilla_Guest</strong><br>Password: available on the kitchen notice board and on the router label under "WiFi".</p>
+<p>Network name: <strong>itacawifi</strong><br>Password: available on site.</p>
 <h4>Coverage</h4>
-<p>The signal covers the entire villa and the main terrace. The signal may be weak in the garden — use mobile data in that case.</p>
+<p>The signal covers the entire villa and the veranda. The signal may be weak in the garden — use mobile data in that case.</p>
 <h4>Mobile data</h4>
 <p>TIM and Vodafone have good 4G coverage in the area. Wind/3 coverage is limited. We recommend a TIM SIM for maximum reliability.</p>`
       },
       rifiuti: {
         title: 'Waste Collection',
-        body: `<h4>Containers</h4>
-<p>You will find coloured containers in the outdoor storage room and in the kitchen:<br>
-🟡 Yellow — Plastic and cans<br>
-🔵 Blue — Paper and cardboard<br>
-🟢 Green — Glass<br>
-⚫ Black — General waste<br>
-🟤 Brown — Organic waste</p>
-<h4>Collection days</h4>
-<p>The detailed calendar is posted in the kitchen. Generally: organic and general waste twice a week, other materials once. Bags should be left at the roadside by 7:00 AM.</p>`
+        body: `<h4>How it works</h4>
+<p>In Conca Verde (Santa Teresa di Gallura), waste collection follows a door-to-door system with schedules specific to the "Seaside Zones". Bins/bags must be put out on the public road from 8:00 PM the day before to 5:00 AM on collection day.</p>
+<h4>Rules for disposal</h4>
+<p>— Placement: the bin must be placed in front of your house number/gate and be clearly visible.<br>
+— If you can't keep up with the door-to-door schedule, you can take the waste to the Recycling Centre right after the beach, on the right, in a gravel area. The recycling centre is available 24/7.</p>
+<h4>Useful links</h4>
+<p><a href="https://www.santateresagalluraturismo.com/wp-content/uploads/2026/07/UTENZE-PORTA-A-PORTA-ALTA-STAGIONE.LUGLIO-1.pdf" target="_blank" rel="noopener">See the calendar</a><br>
+<a href="https://municipium-images-production.s3-eu-west-1.amazonaws.com/s3/6523/allegati/guida-alal-raccolta-comuni-alta-gallura-2022.pdf" target="_blank" rel="noopener">Waste sorting guide</a></p>`
       },
       emergenza: {
         title: 'Emergencies',
@@ -347,9 +347,9 @@ const TRANSLATIONS = {
 <p>🚑 General emergencies: <strong>112</strong><br>
 🚒 Fire brigade: <strong>115</strong><br>
 🚓 Carabinieri: <strong>112</strong><br>
-🏥 Local medical service: posted on the notice board</p>
+🏥 Local medical service: Via Carlo Alberto 6 (tel. 0789 552867) - Santa Teresa di Gallura.</p>
 <h4>Nearest emergency room</h4>
-<p>Reference hospital: indicated on the entrance notice board, with address and directions.</p>
+<p>The local medical service (out-of-hours care) in Santa Teresa Gallura is temporarily located at Via Carlo Alberto 6 (tel. 0789 552867). It is open at night, on Sundays and public holidays. For serious emergencies, always call 112.</p>
 <h4>Owner</h4>
 <p>For any non-medical emergency (house problems, keys, etc.) contact the owner directly at the number on the notice board. We are always available.</p>
 <h4>Fires</h4>
@@ -371,14 +371,12 @@ const TRANSLATIONS = {
         body: `<h4>Departure time</h4>
 <p>Check-out is by 10:00 AM. For late check-out requests, contact us in advance — we will do our best to accommodate you.</p>
 <h4>Before you leave</h4>
-<p>— Leave dishes clean or in the running dishwasher<br>
-— Empty the fridge of perishable items<br>
+<p>— Empty the fridge of perishable items<br>
 — Collect rubbish in the appropriate bags<br>
-— Close all windows and shutters<br>
-— Turn off the air conditioning and lights<br>
-— Close the gas (tap on the left outer side of the kitchen)</p>
+— Close all windows<br>
+— Turn off all the lights</p>
 <h4>Keys</h4>
-<p>Leave the keys in the combination lock box at the entrance. The code will be given to you at check-in. Alternatively, you can hand them directly to the owner.</p>
+<p>Leave the keys in the combination lock box at the entrance. The code will be given to you at check-in.</p>
 <h4>Thank you</h4>
 <p>We hope your stay at Itaca Villa has been unforgettable. We would love to welcome you again. A review on Airbnb or Booking.com means a great deal to us 🙏</p>`
       },
@@ -503,7 +501,7 @@ const TRANSLATIONS = {
         body: `<h4>Eau non potable</h4>
 <p>L'eau du robinet <strong>n'est pas potable</strong>. Pour boire et cuisiner, utiliser exclusivement de l'eau en bouteille, disponible dans les supermarchés locaux.</p>
 <h4>La citerne</h4>
-<p>La villa dispose d'une citerne de récupération pour l'irrigation du jardin. Ne pas utiliser cette eau pour boire ou cuisiner. Le robinet extérieur près du potager est relié à la citerne.</p>
+<p>La villa dispose d'une citerne de récupération en cas d'urgence, en l'absence du flux d'eau habituel. Ne pas utiliser cette eau pour boire ou cuisiner. Vous pouvez utiliser les robinets extérieurs présents dans le jardin.</p>
 <h4>Économies d'eau</h4>
 <p>En été, l'eau est une ressource précieuse en Sardaigne. Nous vous demandons de l'utiliser avec soin : douches courtes, robinets fermés pendant le savonnage, pas d'arrosage aux heures chaudes. <strong>Il est interdit de laver la voiture ou d'autres véhicules avec l'eau de la villa.</strong></p>`
       },
@@ -519,32 +517,33 @@ const TRANSLATIONS = {
       elettricita: {
         title: 'Électricité',
         body: `<h4>Tableau électrique</h4>
-<p>Le tableau électrique se trouve dans le couloir central, dans le placard mural. Il est accessible à tous les hôtes.</p>
+<p>Le tableau électrique se trouve entre la porte d'entrée et le réfrigérateur, derrière un petit panneau. Il est accessible à tous les hôtes.</p>
 <h4>En cas de panne de courant</h4>
 <p>Si le courant se coupe soudainement, vérifiez d'abord le tableau : un disjoncteur différentiel a probablement sauté. Remettez-le en position haute. Si le problème se répète, évitez d'utiliser plusieurs gros appareils simultanément.</p>
 <h4>Attention</h4>
-<p>Ne pas utiliser de multiprises surchargées. Débranchez les appareils lors d'absences prolongées. Le chauffe-eau nécessite environ 30 minutes pour réchauffer l'eau si elle est épuisée.</p>`
+<p>Ne pas utiliser de multiprises surchargées.</p>
+<p><strong><u>— Ne pas utiliser toutes les plaques à induction simultanément à pleine puissance pendant une période prolongée.</u></strong><br>
+<strong><u>— Éviter de faire fonctionner plus de deux cycles de lave-linge consécutifs.</u></strong></p>`
       },
       wifi: {
         title: 'WiFi & Connectivité',
         body: `<h4>Réseau WiFi</h4>
-<p>Nom du réseau : <strong>ItacaVilla_Guest</strong><br>Mot de passe : disponible sur le tableau d'affichage en cuisine et sur l'étiquette du routeur sous "WiFi".</p>
+<p>Nom du réseau : <strong>itacawifi</strong><br>Mot de passe : disponible sur place.</p>
 <h4>Couverture</h4>
-<p>Le signal couvre toute la villa et la terrasse principale. Dans le jardin, le signal peut être faible : utilisez alors les données mobiles.</p>
+<p>Le signal couvre toute la villa et la véranda. Dans le jardin, le signal peut être faible : utilisez alors les données mobiles.</p>
 <h4>Données mobiles</h4>
 <p>TIM et Vodafone ont une bonne couverture 4G dans la zone. Wind/3 a une couverture limitée. Nous recommandons une SIM TIM pour une fiabilité maximale.</p>`
       },
       rifiuti: {
         title: 'Collecte des déchets',
-        body: `<h4>Les conteneurs</h4>
-<p>Vous trouverez des conteneurs colorés dans le débarras extérieur et en cuisine :<br>
-🟡 Jaune — Plastique et canettes<br>
-🔵 Bleu — Papier et carton<br>
-🟢 Vert — Verre<br>
-⚫ Noir — Déchets généraux<br>
-🟤 Marron — Déchets organiques</p>
-<h4>Jours de collecte</h4>
-<p>Le calendrier détaillé est affiché en cuisine. En général : organiques et déchets généraux 2 fois par semaine, autres matériaux une fois. Les sacs doivent être déposés au bord de la route avant 7h00.</p>`
+        body: `<h4>Comment ça marche</h4>
+<p>À Conca Verde (Santa Teresa di Gallura), la collecte des déchets suit le système du porte-à-porte avec des calendriers spécifiques pour les "Zones en bord de mer". Les bacs/sacs doivent être déposés sur la voie publique de 20h00 la veille à 5h00 le jour de la collecte.</p>
+<h4>Règles pour le dépôt</h4>
+<p>— Dépôt : le contenant doit être placé devant votre numéro civique/portail et bien visible.<br>
+— Si vous ne pouvez pas respecter les horaires du porte-à-porte, vous pouvez apporter les déchets à l'Île Écologique juste après la plage, sur la droite, dans un espace en terre battue. L'île écologique est disponible 24h/24.</p>
+<h4>Liens utiles</h4>
+<p><a href="https://www.santateresagalluraturismo.com/wp-content/uploads/2026/07/UTENZE-PORTA-A-PORTA-ALTA-STAGIONE.LUGLIO-1.pdf" target="_blank" rel="noopener">Consulter le calendrier</a><br>
+<a href="https://municipium-images-production.s3-eu-west-1.amazonaws.com/s3/6523/allegati/guida-alal-raccolta-comuni-alta-gallura-2022.pdf" target="_blank" rel="noopener">Guide de tri des déchets</a></p>`
       },
       emergenza: {
         title: 'Urgences',
@@ -552,9 +551,9 @@ const TRANSLATIONS = {
 <p>🚑 Urgences générales : <strong>112</strong><br>
 🚒 Pompiers : <strong>115</strong><br>
 🚓 Carabiniers : <strong>112</strong><br>
-🏥 Médecin de garde local : affiché sur le tableau</p>
+🏥 Médecin de garde local : Via Carlo Alberto 6 (tél. 0789 552867) - Santa Teresa di Gallura.</p>
 <h4>Urgences les plus proches</h4>
-<p>Hôpital de référence : indiqué sur le tableau à l'entrée, avec adresse et itinéraire.</p>
+<p>Le médecin de garde (continuité des soins) à Santa Teresa Gallura se trouve temporairement Via Carlo Alberto 6 (tél. 0789 552867). Il est actif la nuit, les dimanches et jours fériés. Pour les urgences graves, appelez toujours le 112.</p>
 <h4>Propriétaire</h4>
 <p>Pour toute urgence non médicale (problèmes de maison, clés, etc.) contactez directement le propriétaire au numéro indiqué sur le tableau. Nous sommes toujours disponibles.</p>
 <h4>Incendies</h4>
@@ -576,14 +575,12 @@ const TRANSLATIONS = {
         body: `<h4>Heure de départ</h4>
 <p>Le check-out est prévu avant 10h00. Pour les demandes de late check-out, contactez-nous à l'avance : nous ferons de notre mieux pour vous accommoder.</p>
 <h4>Avant de partir</h4>
-<p>— Laisser la vaisselle propre ou dans le lave-vaisselle en marche<br>
-— Vider le réfrigérateur des aliments périssables<br>
+<p>— Vider le réfrigérateur des aliments périssables<br>
 — Rassembler les déchets dans les sacs appropriés<br>
-— Fermer toutes les fenêtres et volets<br>
-— Éteindre la climatisation et les lumières<br>
-— Couper le gaz (robinet sur le côté gauche extérieur de la cuisine)</p>
+— Fermer toutes les fenêtres<br>
+— Éteindre toutes les lumières</p>
 <h4>Les clés</h4>
-<p>Déposez les clés dans la boîte à combinaison à l'entrée. Le code vous sera communiqué au check-in. Vous pouvez aussi les remettre directement au propriétaire.</p>
+<p>Déposez les clés dans la boîte à combinaison à l'entrée. Le code vous sera communiqué au check-in.</p>
 <h4>Merci</h4>
 <p>Nous espérons que votre séjour à Itaca Villa a été inoubliable. Nous serons ravis de vous accueillir à nouveau. Un avis sur Airbnb ou Booking.com nous est très précieux 🙏</p>`
       },
@@ -708,7 +705,7 @@ const TRANSLATIONS = {
         body: `<h4>Kein Trinkwasser</h4>
 <p>Das Leitungswasser ist <strong>nicht trinkbar</strong>. Zum Trinken und Kochen ausschließlich Flaschenwasser verwenden, das in den lokalen Supermärkten erhältlich ist.</p>
 <h4>Die Zisterne</h4>
-<p>Die Villa verfügt über eine Regenwasserzisterne zur Gartenbewässerung. Dieses Wasser nicht zum Trinken oder Kochen verwenden. Der Außenhahn in der Nähe des Gemüsegartens ist mit der Zisterne verbunden.</p>
+<p>Die Villa verfügt über eine Notfall-Sammelzisterne für den Fall, dass die normale Wasserversorgung ausfällt. Dieses Wasser nicht zum Trinken oder Kochen verwenden. Sie können die Außenhähne im Garten benutzen.</p>
 <h4>Wassersparen</h4>
 <p>Im Sommer ist Wasser auf Sardinien eine wertvolle Ressource. Bitte gehen Sie damit sorgfältig um: kurze Duschen, Hähne beim Einseifen schließen, kein Bewässern in den heißen Stunden. <strong>Das Waschen von Fahrzeugen mit dem Wasser der Villa ist verboten.</strong></p>`
       },
@@ -724,32 +721,33 @@ const TRANSLATIONS = {
       elettricita: {
         title: 'Elektrizität',
         body: `<h4>Sicherungskasten</h4>
-<p>Der Sicherungskasten befindet sich im Mittelkorridor, im Wandschrank. Er ist für alle Gäste zugänglich.</p>
+<p>Der Sicherungskasten befindet sich zwischen der Eingangstür und dem Kühlschrank, hinter einer kleinen Abdeckung. Er ist für alle Gäste zugänglich.</p>
 <h4>Bei Stromausfall</h4>
 <p>Wenn der Strom plötzlich ausfällt, kontrollieren Sie zuerst den Sicherungskasten: wahrscheinlich ist ein Fehlerstromschutzschalter ausgelöst. Schalten Sie ihn wieder ein (nach oben drücken). Bei Wiederholung vermeiden Sie es, mehrere große Geräte gleichzeitig zu betreiben.</p>
 <h4>Wichtig</h4>
-<p>Keine überlasteten Mehrfachsteckdosen verwenden. Geräte bei längerer Abwesenheit vom Strom trennen. Der Boiler benötigt ca. 30 Minuten zum Aufheizen, wenn das Warmwasser aufgebraucht ist.</p>`
+<p>Keine überlasteten Mehrfachsteckdosen verwenden.</p>
+<p><strong><u>— Nicht alle Induktionskochplatten gleichzeitig über einen längeren Zeitraum mit voller Leistung betreiben.</u></strong><br>
+<strong><u>— Vermeiden Sie es, mehr als zwei Waschmaschinenläufe hintereinander laufen zu lassen.</u></strong></p>`
       },
       wifi: {
         title: 'WLAN & Konnektivität',
         body: `<h4>WLAN-Netzwerk</h4>
-<p>Netzwerkname: <strong>ItacaVilla_Guest</strong><br>Passwort: auf dem Küchenbrett und auf dem Router-Etikett unter "WiFi" verfügbar.</p>
+<p>Netzwerkname: <strong>itacawifi</strong><br>Passwort: vor Ort verfügbar.</p>
 <h4>Abdeckung</h4>
-<p>Das Signal deckt die gesamte Villa und die Hauptterrasse ab. Im Garten kann das Signal schwach sein — nutzen Sie in diesem Fall mobile Daten.</p>
+<p>Das Signal deckt die gesamte Villa und die Veranda ab. Im Garten kann das Signal schwach sein — nutzen Sie in diesem Fall mobile Daten.</p>
 <h4>Mobile Daten</h4>
 <p>TIM und Vodafone haben gute 4G-Abdeckung in der Gegend. Wind/3 hat begrenzte Abdeckung. Wir empfehlen eine TIM-SIM für maximale Zuverlässigkeit.</p>`
       },
       rifiuti: {
         title: 'Müllentsorgung',
-        body: `<h4>Die Container</h4>
-<p>Farbige Container finden Sie im Außenlager und in der Küche:<br>
-🟡 Gelb — Kunststoff und Dosen<br>
-🔵 Blau — Papier und Pappe<br>
-🟢 Grün — Glas<br>
-⚫ Schwarz — Restmüll<br>
-🟤 Braun — Bioabfall</p>
-<h4>Abfuhrtage</h4>
-<p>Der detaillierte Kalender hängt in der Küche. Allgemein: Bio- und Restmüll zweimal pro Woche, andere Materialien einmal. Säcke bis 7:00 Uhr am Straßenrand bereitstellen.</p>`
+        body: `<h4>Wie es funktioniert</h4>
+<p>In Conca Verde (Santa Teresa di Gallura) erfolgt die Mülltrennung nach dem Haustürsystem mit spezifischen Kalendern für die "Küstenzonen". Behälter/Säcke müssen von 20:00 Uhr am Vortag bis 5:00 Uhr am Abholtag auf der öffentlichen Straße bereitgestellt werden.</p>
+<h4>Regeln für die Bereitstellung</h4>
+<p>— Aufstellung: Der Behälter muss vor der eigenen Hausnummer/dem Tor stehen und gut sichtbar sein.<br>
+— Wenn Sie die Haustür-Zeiten nicht einhalten können, können Sie den Müll zum Wertstoffhof bringen, gleich nach dem Strand, rechts, auf einem unbefestigten Platz. Der Wertstoffhof ist rund um die Uhr verfügbar.</p>
+<h4>Nützliche Links</h4>
+<p><a href="https://www.santateresagalluraturismo.com/wp-content/uploads/2026/07/UTENZE-PORTA-A-PORTA-ALTA-STAGIONE.LUGLIO-1.pdf" target="_blank" rel="noopener">Kalender ansehen</a><br>
+<a href="https://municipium-images-production.s3-eu-west-1.amazonaws.com/s3/6523/allegati/guida-alal-raccolta-comuni-alta-gallura-2022.pdf" target="_blank" rel="noopener">Leitfaden zur Mülltrennung</a></p>`
       },
       emergenza: {
         title: 'Notfälle',
@@ -757,9 +755,9 @@ const TRANSLATIONS = {
 <p>🚑 Allgemeine Notfälle: <strong>112</strong><br>
 🚒 Feuerwehr: <strong>115</strong><br>
 🚓 Carabinieri: <strong>112</strong><br>
-🏥 Lokaler ärztlicher Bereitschaftsdienst: am schwarzen Brett</p>
+🏥 Lokaler ärztlicher Bereitschaftsdienst: Via Carlo Alberto 6 (Tel. 0789 552867) - Santa Teresa di Gallura.</p>
 <h4>Nächste Notaufnahme</h4>
-<p>Referenzkrankenhaus: am Eingangs-Schwarzbrett angegeben, mit Adresse und Wegbeschreibung.</p>
+<p>Der ärztliche Bereitschaftsdienst in Santa Teresa Gallura befindet sich vorübergehend in der Via Carlo Alberto 6 (Tel. 0789 552867). Er ist nachts, an Sonn- und Feiertagen geöffnet. Bei schweren Notfällen wählen Sie immer die 112.</p>
 <h4>Eigentümer</h4>
 <p>Bei nicht-medizinischen Notfällen (Hausschäden, Schlüssel etc.) wenden Sie sich direkt an den Eigentümer unter der am schwarzen Brett angegebenen Nummer. Wir sind immer erreichbar.</p>
 <h4>Brände</h4>
@@ -781,14 +779,12 @@ const TRANSLATIONS = {
         body: `<h4>Abfahrtszeit</h4>
 <p>Der Check-out ist bis 10:00 Uhr vorgesehen. Für Late-Check-out-Anfragen kontaktieren Sie uns im Voraus — wir werden unser Bestes tun, um Ihnen entgegenzukommen.</p>
 <h4>Vor der Abreise</h4>
-<p>— Geschirr sauber hinterlassen oder in der laufenden Spülmaschine<br>
-— Kühlschrank von verderblichen Lebensmitteln leeren<br>
+<p>— Kühlschrank von verderblichen Lebensmitteln leeren<br>
 — Abfall in die entsprechenden Säcke sammeln<br>
-— Alle Fenster und Rollläden schließen<br>
-— Klimaanlage und Beleuchtung ausschalten<br>
-— Gas absperren (Hahn auf der linken Außenseite der Küche)</p>
+— Alle Fenster schließen<br>
+— Alle Lichter ausschalten</p>
 <h4>Schlüssel</h4>
-<p>Die Schlüssel in der Zahlenschloss-Box am Eingang hinterlegen. Der Code wird Ihnen beim Check-in mitgeteilt. Alternativ können Sie sie direkt dem Eigentümer übergeben.</p>
+<p>Die Schlüssel in der Zahlenschloss-Box am Eingang hinterlegen. Der Code wird Ihnen beim Check-in mitgeteilt.</p>
 <h4>Danke</h4>
 <p>Wir hoffen, dass Ihr Aufenthalt in Itaca Villa unvergesslich war. Wir würden uns freuen, Sie wieder begrüßen zu dürfen. Eine Bewertung auf Airbnb oder Booking.com ist uns sehr wertvoll 🙏</p>`
       },

@@ -719,6 +719,11 @@ footer {
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
+.modal-body a {
+  color: var(--sea);
+  text-decoration: underline;
+}
+.modal-body a:hover { color: var(--deep); }
 
 /* TABLET 900px */
 @media (max-width: 900px) {
